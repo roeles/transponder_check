@@ -1,11 +1,9 @@
-before_install:
-- sudo apt-add-repository ppa:gqrx/releases -y
-- sudo apt-get update -q
-- sudo apt-get install librtlsdr-dev
+dist: trusty
+sudo: required
 
 install:
 - sudo apt-get update
-- sudo apt-get install texlive texlive-latex-extra texlive-lang-ukenglish latex-xcolor pgf librsvg2-bin gnuplot graphviz python-scipy texlive-science inkscape pdftk 
+- sudo apt-get install texlive texlive-latex-extra texlive-lang-ukenglish latex-xcolor pgf librsvg2-bin gnuplot graphviz python-scipy texlive-science inkscape pdftk librtlsdr-dev
 
 script:
 - make -j8
