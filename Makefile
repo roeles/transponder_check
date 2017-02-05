@@ -22,6 +22,9 @@ intermediateclean:
 
 clean: imgclean outputclean intermediateclean
 
+bin/%: code/%.c
+	gcc -o $@ $<
+
 dump1090/dump1090: dump1090/Makefile
 	make -C dump1090
 
