@@ -1,7 +1,7 @@
 DEPS=Makefile
 
 
-all: dump1090/dump1090 transponder_check.pdf
+all: dump1090/dump1090 
 
 
 imgclean:
