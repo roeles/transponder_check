@@ -1,7 +1,8 @@
 DEPS=Makefile
 
 
-all: transponder_check.pdf
+all: dump1090/dump1090 transponder_check.pdf
+
 
 imgclean:
 	rm -f img/*.pdf
@@ -20,6 +21,9 @@ intermediateclean:
 	rm -f *.nls
 
 clean: imgclean outputclean intermediateclean
+
+dump1090/dump1090: dump1090/Makefile
+	make -C dump1090
 
 %.pdf-view: %.pdf
 		qpdfview $<
