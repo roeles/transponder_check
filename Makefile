@@ -1,7 +1,13 @@
 DEPS=Makefile
 
 
-all: dump1090/dump1090 
+all: transponder_check.pdf dump1090/dump1090 
+
+data/%.txt: data/%_30005_output.bin bin/throttle
+	(dump1090/dump1090 --net-only --interactive > $@) &
+	sleep 1
+	pv -cN input < $< | ./bin/throttle 102400 | nc localhost 30004
+	killall dump1090
 
 
 imgclean:
@@ -39,13 +45,13 @@ dump1090/dump1090: dump1090/Makefile
 #minorchange_complete.pdf: minorchange.pdf preface.pdf
 #	pdftk preface.pdf approval.pdf minorchange.pdf cat output $@
 
-minorchange.pdf: transponder_check.tex references.bib $(DEPS)
-	pdflatex minorchange.tex
-	pdflatex minorchange.tex
-	pdflatex minorchange.tex
-#	bibtex kalman_paper.aux
-#	pdflatex kalman_paper.tex
-#	pdflatex kalman_paper.tex
+transponder_check.pdf: transponder_check.tex references.bib $(DEPS)
+	pdflatex transponder_check.tex
+	pdflatex transponder_check.tex
+	pdflatex transponder_check.tex
+	bibtex transponder_check.aux
+	pdflatex transponder_check.tex
+	pdflatex transponder_check.tex
 
 #Image generation
 img/%.pdf: img/%.svg $(DEPS)

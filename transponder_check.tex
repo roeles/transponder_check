@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+
+\usepackage{acronym}
+\usepackage[intoc]{nomencl}
+\usepackage{todonotes}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{acronym}
+\usepackage{bytefield}
+\usepackage{marvosym}
+\usepackage[pdftex,
+		pdfauthor={Roel Baardman},
+		pdftitle={Transponder check}]{hyperref}
+		
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{	keywordstyle=\color{blue},
+		commentstyle=\color{dkgreen},
+		stringstyle=\color{mauve},
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		stepnumber=2,
+		numbersep=5pt,
+		breaklines=true,
+		breakatwhitespace=false,
+		title=\lstname
+}
+
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+\section{Introduction}
+The Dutch government writes in MD NL-2011-002 R1\cite{NL_2011_002_R1}, Appendix A, Table 1, Footnote 3: ``Refer to EC Regulation 1207/2011 article 7(2) for mandatory periodic testing of Mode S Transponder systems.''
+
+EC Regulation 1207/2011\cite{EC_1207_2011} article 7(2) states: ``Operators shall ensure that a check is performed at least every two years, and, whenever an anomaly is detected on a specific aircraft, so that the data items set out in point 3 of Part A of Annex II, in point 3 of Part B of Annex II and in point 2 of Part C of Annex II, if applicable, are correctly provided at the output of secondary surveillance radar transponders installed on board their aircraft. If any of the data items are not correctly provided then the operator shall investigate the matter before the next flight is initiated and any rectification necessary shall be introduced in line with normal maintenance and corrective procedures for the aircraft and its avionics.''
+
+
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+
+\end{document}
