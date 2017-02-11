@@ -45,7 +45,7 @@ dump1090/dump1090: dump1090/Makefile
 #minorchange_complete.pdf: minorchange.pdf preface.pdf
 #	pdftk preface.pdf approval.pdf minorchange.pdf cat output $@
 
-transponder_check.pdf: transponder_check.tex references.bib $(DEPS)
+transponder_check.pdf: transponder_check.tex references.bib img/setup.pdf $(DEPS)
 	pdflatex transponder_check.tex
 	pdflatex transponder_check.tex
 	pdflatex transponder_check.tex
