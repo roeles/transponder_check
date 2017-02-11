@@ -55,5 +55,5 @@ transponder_check.pdf: transponder_check.tex references.bib img/setup.pdf $(DEPS
 
 #Image generation
 img/%.pdf: img/%.svg $(DEPS)
-	inkscape -z -D --file=$< --export-pdf=$@
-#	 rsvg-convert -f pdf -o $@ $<
+	 rsvg-convert -f pdf -o $@ $<
+#	inkscape -z -D --file=$< --export-pdf=$@
