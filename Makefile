@@ -1,22 +1,22 @@
 DEPS=Makefile
 
 
-all: transponder_check.pdf dump1090/dump1090 
+all: transponder_check.pdf data/2016-10-29_1438.txt $(DEPS)
 
-data/%.txt: data/%_30005_output.bin bin/throttle
+data/%.txt: data/%_30005_output.bin bin/throttle dump1090/dump1090 $(DEPS)
 	(dump1090/dump1090 --net-only --interactive > $@) &
 	sleep 1
-	pv -cN input < $< | ./bin/throttle 102400 | nc localhost 30004
+	pv -cN input < $< | ./bin/throttle 102400 | nc -q 1 localhost 30004
 	killall dump1090
 
 
-imgclean:
+imgclean: $(DEPS)
 	rm -f img/*.pdf
 
-outputclean:
+outputclean: $(DEPS)
 	rm -f *.pdf
 
-intermediateclean:
+intermediateclean: $(DEPS)
 	rm -f *.aux
 	rm -f *.bbl
 	rm -f *.log
