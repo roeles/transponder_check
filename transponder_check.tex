@@ -36,13 +36,36 @@
 \graphicspath{{img/}}
 
 \begin{document}
+\section{Source documents}
+\subsection{Aircraft Maintainance Program}
 The maintainance manual of PH-1516\cite{AMP_PH1516} references MD NL-2011-002 R1, due to the existance of a transponder installation.
 
-The Dutch government writes in MD NL-2011-002 R1\cite{NL_2011_002_R1}, Appendix A, Table 1, Footnote 3: \emph{``Refer to EC Regulation 1207/2011 article 7(2) for mandatory periodic testing of Mode S Transponder systems.''}
+\subsection{Maintainance Directive}
+\subsubsection{Appendix A}
+The Dutch government writes in MD NL-2011-002 R1\cite{NL_2011_002_R1}, Appendix A, Table 1, Footnote 3: \texttt{``Refer to EC Regulation 1207/2011 article 7(2) for mandatory periodic testing of Mode S Transponder systems.''}
+\subsubsection{Appendix B}
+The Dutch government writes in MD NL-2011-002 R1\cite{NL_2011_002_R1}, Appendix B, Point 4: \texttt{``Operational checking of the transponder is required, as part of the radio identification equipment check. Maintenance tests should include a periodic verification check of aircraft derived data including the ICAO 24 bit aircraft address using suitable ramp test equipment1. For this transponder operational check, please follow the instructions in EASA SIB 2011-15, Appendix 1, which are provided to minimise the hinder such testing causes to air traffic control [...]''}
 
-EC Regulation 1207/2011\cite{EC_1207_2011} article 7(2) states: \emph{``Operators shall ensure that a check is performed at least every two years, and, whenever an anomaly is detected on a specific aircraft, so that the data items set out in point 3 of Part A of Annex II, in point 3 of Part B of Annex II and in point 2 of Part C of Annex II, if applicable, are correctly provided at the output of secondary surveillance radar transponders installed on board their aircraft. If any of the data items are not correctly provided then the operator shall investigate the matter before the next flight is initiated and any rectification necessary shall be introduced in line with normal maintenance and corrective procedures for the aircraft and its avionics.''}
+\subsection{{EC} Regulation}
+\subsubsection{Article 7(2)}
+EC Regulation 1207/2011\cite{EC_1207_2011} article 7(2) states: \texttt{``Operators shall ensure that a check is performed at least every two years, and, whenever an anomaly is detected on a specific aircraft, so that the data items set out in point 3 of Part A of Annex II, in point 3 of Part B of Annex II and in point 2 of Part C of Annex II, if applicable, are correctly provided at the output of secondary surveillance radar transponders installed on board their aircraft. If any of the data items are not correctly provided then the operator shall investigate the matter before the next flight is initiated and any rectification necessary shall be introduced in line with normal maintenance and corrective procedures for the aircraft and its avionics.''}
+\subsubsection{{Annex II, Part A}}
+Point 3, applicable for Mode-S transponders, lists these items:
+\begin{itemize}
+\item[a]{24-bit ICAO aircraft address}
+\item[b]{Mode A code}
+\item[c]{Pressure altitude}
+\item[d]{Flight status (on the ground or airborne)}
+\item[e]{Data link capability report}
+\item[f]{Common usage {GICB} capability report}
+\item[g]{Aircraft identification}
+\item[h]{Special position indication (SPI)}
+\item[i]{Emergency status}
+\item[j]{{ACAS} active resolution advisories when the aircraft is equipped with TCAS II}
+\end{itemize}
 
-EASA SIB 2011-15R2, Appendix 1 states:
+\subsection{{EASA} Safety Information Bulletin}
+EASA SIB 2011-15R2\cite{EASA_SIB_2011_15R2}, Appendix 1 states:
 \begin{itemize}
 \item[a.]{When not required, ensure all transponders are selected to ‘OFF’ or ‘Standby’.}
 \item[b.]{Before starting any test, contact the local Air Traffic Control Unit and advise them of your intention to conduct transponder testing. Advise the Air Traffic Unit of your start time and test duration. Also inform them of the altitude(s) at which you will be testing, your intended Aircraft Identification (Flight Id) and your intended Mode A code. See para c and d. Note: Certain altitudes may not be possible due to over flying aircraft.}
@@ -56,7 +79,6 @@ EASA SIB 2011-15R2, Appendix 1 states:
 \item[j.]{If testing transponder parameters other than ‘altitude’, set altitude to -1000 feet (minus 1000 feet), or over 60000 feet. This will minimise the possibility of ACAS warning to airfield and overflying aircraft.}
 \item[k.]{When testing is complete select the transponder(s) to ‘OFF’ or ‘Standby’.}
 \end{itemize}
-
 
 \section{Test setup}
 \includegraphics[width=\textwidth]{setup}
