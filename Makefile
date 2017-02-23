@@ -1,7 +1,7 @@
 DEPS=Makefile
 
 
-all: transponder_check.pdf data/2016-10-29_1438.txt $(DEPS)
+all: transponder_check.pdf $(DEPS)
 
 data/%.txt: data/%_30005_output.bin bin/throttle dump1090/dump1090 $(DEPS)
 	(dump1090/dump1090 --net-only --interactive > $@) &
@@ -45,7 +45,7 @@ dump1090/dump1090: dump1090/Makefile
 #minorchange_complete.pdf: minorchange.pdf preface.pdf
 #	pdftk preface.pdf approval.pdf minorchange.pdf cat output $@
 
-transponder_check.pdf: transponder_check.tex references.bib img/setup.pdf $(DEPS)
+transponder_check.pdf: transponder_check.tex references.bib img/setup.pdf data/2016-10-29_1438.txt $(DEPS)
 	pdflatex transponder_check.tex
 	pdflatex transponder_check.tex
 	pdflatex transponder_check.tex
