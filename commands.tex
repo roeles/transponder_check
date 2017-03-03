@@ -1,0 +1,164 @@
+%\renewcommand*{\pagedeclaration}[1]
+%{
+%	\unskip
+%	, page \hyperpage{#1}
+%}
+
+%Derivative
+\newcommand{\derivative}[2]
+{
+	\frac{\partial #1}{\partial #2}
+}
+
+%Scientific notation
+\newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+
+%Checklist commands
+\newcommand{\itemcheck}[1]
+{
+        \item[\Squarepipe]{#1}
+}
+
+\newcommand{\itemchecked}[2]
+{
+        \item[\Checkedbox]{#1}
+        \emph{#2}
+}
+
+\newcommand{\itemfailed}[2]
+{
+        \item[\Info]{#1}
+        \emph{#2}
+}
+
+%These are derived from ISO-1151
+\newcommand{\angleofattack}
+{
+	\alpha
+}
+
+\newcommand{\angleofsideslip}
+{
+	\beta
+}
+
+\newcommand{\azimuth}
+{
+	\Psi
+}
+
+\newcommand{\inclination}
+{
+	\Theta
+}
+
+\newcommand{\bankangle}
+{
+	\Phi
+}
+
+\newcommand{\angularvelocity}
+{
+	\Omega
+}
+
+\newcommand{\mach}
+{
+	Ma
+}
+
+%Quaternions
+\newcommand{\quaternion}[4] {
+\begin{bmatrix}
+#4 \\
+#1 \\
+#2 \\
+#3 \\
+\end{bmatrix}
+}
+
+%Statistics
+\newcommand{\stdev}
+{
+	\sigma
+}
+
+\newcommand{\variance}
+{
+	\sigma^2
+}
+
+%Misc
+\newcommand{\nomen}[3]
+{
+	\nomenclature{#1}{#2 \hfill\makebox[8em]{#3\hfill}}
+	Where #1 is the #2 (#3). \\
+}
+
+\newcommand{\myquote}[1]
+{
+	\textit{#1}
+}
+
+\newcommand{\chapterref}[1]
+{
+	Chapter \ref{chap:#1}
+}
+
+\newcommand{\chapterlabel}[1]
+{
+	\label{chap:#1}
+}
+
+\newcommand{\labeledchapter}[2]
+{
+	\chapter{#1}
+	\chapterlabel{#2}
+}
+
+\newcommand{\sectionref}[1]
+{
+	Section \ref{sec:#1}
+}
+
+\newcommand{\sectionlabel}[1]
+{
+	\label{sec:#1}
+}
+
+\newcommand{\labeledsection}[2]
+{
+	\section{#1}
+	\sectionlabel{#2}
+}
+
+\newcommand{\figureref}[1]
+{
+	Figure \ref{fig:#1}
+}
+
+\newcommand{\figurelabel}[1]
+{
+	\label{fig:#1}
+}
+
+\newcommand{\tableref}[1]
+{
+	Table \ref{tab:#1}
+}
+
+\newcommand{\equationref}[1]
+{
+	Equation \ref{eq:#1}
+}
+
+\newcommand{\equationlabel}[1]
+{
+	\label{eq:#1}
+}
+
+\newcommand{\listingref}[1]
+{
+	Code Listing \ref{lst:#1}
+}
+
