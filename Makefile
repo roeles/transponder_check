@@ -1,7 +1,13 @@
 DEPS=Makefile
 
 
+view: transponder_check.pdf $(DEPS)
+	qpdfview $<
+
 all: transponder_check.pdf $(DEPS)
+
+data/%.rtlsdr: $(DEPS)
+	rtl_sdr -f 1090000000 -s 2000000 -g 50 -n 120000000 - | pv -cN rtlsdr -s 240000000 > $@
 
 data/%.txt: data/%_30005_output.bin bin/throttle dump1090/dump1090 $(DEPS)
 	(dump1090/dump1090 --net-only --interactive > $@) &
@@ -40,10 +46,6 @@ dump1090/dump1090: dump1090/Makefile
 %.pdf-install: %.pdf
 	cp -v $< ~/public_html/
 
-
-#PDF files
-#minorchange_complete.pdf: minorchange.pdf preface.pdf
-#	pdftk preface.pdf approval.pdf minorchange.pdf cat output $@
 
 transponder_check.pdf: transponder_check.tex references.bib img/setup.pdf data/2016-10-29_1438.txt $(DEPS)
 	pdflatex transponder_check.tex
