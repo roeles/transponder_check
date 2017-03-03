@@ -19,4 +19,4 @@ addons:
       - libusb-1.0-0-dev pv
 
 script:
-- make
+- make all

@@ -1,10 +1,10 @@
 DEPS=Makefile
 
 
+all: transponder_check.pdf $(DEPS)
+
 view: transponder_check.pdf $(DEPS)
 	qpdfview $<
-
-all: transponder_check.pdf $(DEPS)
 
 data/%.rtlsdr: $(DEPS)
 	rtl_sdr -f 1090000000 -s 2000000 -g 50 -n 120000000 - | pv -cN rtlsdr -s 240000000 > $@
