@@ -35,6 +35,8 @@
 
 \graphicspath{{img/}}
 
+\include{commands}
+
 \begin{document}
 \section{Source documents}
 \subsection{Aircraft Maintainance Program}
@@ -80,7 +82,21 @@ EASA SIB 2011-15R2\cite{EASA_SIB_2011_15R2}, Appendix 1 states:
 \item[k.]{When testing is complete select the transponder(s) to ‘OFF’ or ‘Standby’.}
 \end{itemize}
 
-\section{Test setup}
+\section{Test protocol}
+
+\begin{enumerate}
+\item Place the aircraft under test inside a hangar. Place the aircraft such that the wingtips are at the same height and the aircraft is in balance.
+\item Power the transponder under test on, switch it to ``Standby'' mode.
+\item Request the aerodrome's QNH and write it down.
+\item Start the command \texttt{{rtl\_sdr -f 1090000000 -s 2000000 -g 50 - | pv -cN output > output.bin}} and verify that data is flowing at more than 3MegaBytes per second.
+\item Note the time (on the computer) the command was started.
+\item Switch the transponder under test from ``Standby'' to ``Alt''.
+\item Note the time (on the computer) the transponder was started.
+\item Measure the transponder for a full minute.
+\item Switch the transponder from ``Alt'' back to ``Standby''.
+\item Note the time (on the computer) the transponder was switched back.
+\end{enumerate}
+
 \includegraphics[width=\textwidth]{setup}
 
 \bibliographystyle{ieeetr}
