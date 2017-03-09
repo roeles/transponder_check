@@ -12,7 +12,7 @@ data/%: data/%.gz $(DEPS)
 #data/%.rtlsdr: $(DEPS)
 #	rtl_sdr -f 1090000000 -s 2000000 -g 50 -n 120000000 - | pv -cN rtlsdr -s 240000000 > $@
 
-data/%.txt: data/%_30005_output.bin bin/throttle dump1090/dump1090 $(DEPS)
+data/%.txt: data/%_30005_output.bin dump1090/dump1090 $(DEPS)
 	(dump1090/dump1090 --net-only --interactive > $@) &
 	sleep 1
 	pv -cN input -L 102400 < $< | nc -q 1 localhost 30004
