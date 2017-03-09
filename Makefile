@@ -15,7 +15,7 @@ data/%: data/%.gz $(DEPS)
 data/%.txt: data/%_30005_output.bin bin/throttle dump1090/dump1090 $(DEPS)
 	(dump1090/dump1090 --net-only --interactive > $@) &
 	sleep 1
-	pv -cN input < $< | ./bin/throttle 102400 | nc -q 1 localhost 30004
+	pv -cN input -L 102400 < $< | nc -q 1 localhost 30004
 	killall dump1090
 
 
