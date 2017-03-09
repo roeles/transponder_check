@@ -13,7 +13,7 @@
 \usepackage[pdftex,
 		pdfauthor={Roel Baardman},
 		pdftitle={Transponder check}]{hyperref}
-		
+\usepackage{pdflscape}		
 
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -82,6 +82,7 @@ EASA SIB 2011-15R2\cite{EASA_SIB_2011_15R2}, Appendix 1 states:
 \item[k.]{When testing is complete select the transponder(s) to ‘OFF’ or ‘Standby’.}
 \end{itemize}
 
+\begin{landscape}
 \section{Test protocol}
 
 \begin{enumerate}
@@ -98,6 +99,7 @@ EASA SIB 2011-15R2\cite{EASA_SIB_2011_15R2}, Appendix 1 states:
 \end{enumerate}
 
 \includegraphics[width=\textwidth]{setup}
+\end{landscape}
 
 \bibliographystyle{ieeetr}
 \bibliography{references}
