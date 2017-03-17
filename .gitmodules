@@ -1,0 +1,3 @@
+[submodule "dump1090"]
+	path = dump1090
+	url = https://github.com/mutability/dump1090
